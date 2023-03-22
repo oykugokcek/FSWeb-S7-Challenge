@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 const Body = () => {
   return (
     <div
-      className="bg-center bg-no-repeat bg-cover "
+      className="bg-center bg-no-repeat bg-cover rounded-md max-w-5xl mx-auto mt-12 mb-6"
       style={{ backgroundImage: `url(${backgroundImageForBody})` }}
     >
-      <div className="h-80 flex flex-col text-white justify-center content-start md:mr-80 ">
+      <div className="h-80 flex flex-col text-white justify-center ">
         <div className="text-center mb-2 text-xl ">
-          Kendi pizzanı kendin yarat
+          Make your own pizza!
         </div>
         <Link
           to={`/form`}
           className="mx-auto flex items-center py-3 pr-2 border rounded-full"
         >
           <FaPizzaSlice className="mx-3" />
-          Malzemeleri seç
+          Choose Toppings
         </Link>
       </div>
     </div>

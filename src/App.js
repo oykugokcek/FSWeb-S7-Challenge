@@ -1,28 +1,41 @@
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 import RestaurantList from "./Components/RestaurantList";
-import { BrowserRouter, Route } from "react-router-dom";
-import FormContainer from "./FormComponents/FormContainer";
+import { Switch, Route } from "react-router-dom";
 import Help from "./Pages/Help";
+import KitchenList from "./Components/KitchenList";
+import { useState } from "react";
+import PizzaForm from "./Components/PizzaForm";
+import CalculateCost from "./Components/CalculateCost";
 
 function App() {
+  let initialData = {
+    size: "",
+    gluten:"",
+    toppings: [],
+    anythingelse:"" 
+}
+const [data, setData] = useState(initialData);
   return (
-    <div className="font-openSans">
-      <BrowserRouter>
-        <Header />
+    <div className="font-openSans bg-[#F1F1F1] ">
+      <Header />
+      <Switch>
         <Route exact path="/">
-          <div>
+          <div className="">
             <Body />
+            <KitchenList/>
             <RestaurantList />
           </div>
         </Route>
         <Route path="/form">
-          <FormContainer />
+          <>
+        <PizzaForm data={data} setData={setData}/>
+        </>
         </Route>
         <Route path="/help">
-          <Help />
+        <Help />
         </Route>
-      </BrowserRouter>
+      </Switch>
     </div>
   );
 }
