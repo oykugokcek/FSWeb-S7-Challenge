@@ -16,16 +16,16 @@ function KitchenList() {
             name:"Street Delicies",
         },
         {
-            image:"./Images/transparent-hamburger-image.png",
-            name:"Hamburger",
+            image:"./Images/transparent-chinese-image.png",
+            name:"Chinese",
         },
         {
-            image:"./Images/transparent-chicken-image.png",
-            name:"Chicken",
+            image:"./Images/transparent-italian-image.png",
+            name:"Italian",
         },
         {
-            image:"./Images/transparent-street-delicies.png",
-            name:"Street Delicies",
+            image:"./Images/transparent-mexican-image.png",
+            name:"Mexican",
         },
        
     ]

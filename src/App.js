@@ -7,6 +7,7 @@ import KitchenList from "./Components/KitchenList";
 import { useState } from "react";
 import PizzaForm from "./Components/PizzaForm";
 import CalculateCost from "./Components/CalculateCost";
+import MockupPizza from "./Components/MockupPizza";
 
 function App() {
   let initialData = {
@@ -16,6 +17,7 @@ function App() {
     anythingelse:"" 
 }
 const [data, setData] = useState(initialData);
+const [cost, setCost] = useState(0);
   return (
     <div className="font-openSans bg-[#F1F1F1] ">
       <Header />
@@ -28,9 +30,11 @@ const [data, setData] = useState(initialData);
           </div>
         </Route>
         <Route path="/form">
-          <>
-        <PizzaForm data={data} setData={setData}/>
-        </>
+          
+          <MockupPizza cost={cost}/>
+          <PizzaForm data={data} setData={setData}/>
+          <CalculateCost data={data} cost={cost} setCost={setCost}/>
+        
         </Route>
         <Route path="/help">
         <Help />
